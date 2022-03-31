@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-03-31T16:49:03 ICT" name="Default suite" finished-at="2022-03-31T16:49:11 ICT" duration-ms="7978">
+    <groups>
+    </groups>
+    <test started-at="2022-03-31T16:49:03 ICT" name="Default test" finished-at="2022-03-31T16:49:11 ICT" duration-ms="7978">
+      <class name="tests.ExampleRESTRequests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ExampleRESTRequests@32ee6fee]" started-at="2022-03-31T16:49:03 ICT" name="setUp" finished-at="2022-03-31T16:49:03 ICT" duration-ms="534" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testDeleteUser()[pri:0, instance:tests.ExampleRESTRequests@32ee6fee]" started-at="2022-03-31T16:49:03 ICT" name="testDeleteUser" finished-at="2022-03-31T16:49:06 ICT" duration-ms="2458" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteUser -->
+        <test-method signature="testGetAllUsers()[pri:0, instance:tests.ExampleRESTRequests@32ee6fee]" started-at="2022-03-31T16:49:06 ICT" name="testGetAllUsers" finished-at="2022-03-31T16:49:08 ICT" duration-ms="1915" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetAllUsers -->
+        <test-method signature="testGetUser()[pri:0, instance:tests.ExampleRESTRequests@32ee6fee]" started-at="2022-03-31T16:49:08 ICT" name="testGetUser" finished-at="2022-03-31T16:49:08 ICT" duration-ms="406" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetUser -->
+        <test-method signature="testPatchUser()[pri:0, instance:tests.ExampleRESTRequests@32ee6fee]" started-at="2022-03-31T16:49:08 ICT" name="testPatchUser" finished-at="2022-03-31T16:49:09 ICT" duration-ms="889" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPatchUser -->
+        <test-method signature="testPostUser()[pri:0, instance:tests.ExampleRESTRequests@32ee6fee]" started-at="2022-03-31T16:49:09 ICT" name="testPostUser" finished-at="2022-03-31T16:49:10 ICT" duration-ms="764" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPostUser -->
+        <test-method signature="testPutUser()[pri:0, instance:tests.ExampleRESTRequests@32ee6fee]" started-at="2022-03-31T16:49:10 ICT" name="testPutUser" finished-at="2022-03-31T16:49:11 ICT" duration-ms="949" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPutUser -->
+      </class> <!-- tests.ExampleRESTRequests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
