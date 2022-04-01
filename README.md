@@ -20,5 +20,6 @@ Step 4 : Invoke json-server url on browser and check the api
 
 ## Run tests
 
-ExampleRESTRequests: Example REST api requests: GET, POST, PUT, PATCH, DELETE
-ExampleSOAPRequests: Exampke SOAP api requests: Calculator app - Add, Subtract, Devide, Multiply
+**ExampleRESTRequests**: Example REST api requests: GET, POST, PUT, PATCH, DELETE
+
+**ExampleSOAPRequests**: Exampke SOAP api requests: Calculator app - Add, Subtract, Devide, Multiply
