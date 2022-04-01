@@ -19,38 +19,37 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 public class ExampleRESTRequests {
 	@BeforeTest
 	public void setUp() {
-		baseURI = "https://reqres.in";
+		baseURI = "http://localhost:3000/";
 	}
 	
-	@Test
+	@Test(priority = 1)
 	public void testGetAllUsers() {
 		given().
 		when().
-			get("/api/users").
+			get("/users").
 		then().
 			log().all().
 			statusCode(200).
-			assertThat().body(matchesJsonSchemaInClasspath("all_users_schema.json")).
-			body("data.id", hasItems(1,2,3,4,5,6));
-	}
+			assertThat().body(matchesJsonSchemaInClasspath("all_users_schema.json"));
+		}
 	
-	@Test
-	public void testGetUser() {
+	@Test(priority = 2)
+	public void test2GetUser() {
 		given().
 		when().
-			get("/api/users/1").
+			get("/users/1").
 		then().
 			log().all().
 			statusCode(200).
 			assertThat().body(matchesJsonSchemaInClasspath("user_schema.json")).
-			body("data.id", equalTo(1));
+			body("id", equalTo(1));
 		}
 	
-	@Test
+	@Test(priority = 3)
 	public void testPostUser() {
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("name", "Vinh Ly");
-		map.put("job", "Automation Leader");
+		map.put("name", "Will Smith");
+		map.put("job", "Actor");
 		JSONObject payload = new JSONObject(map);
 		
 		given().
@@ -58,20 +57,20 @@ public class ExampleRESTRequests {
 			accept(ContentType.JSON).
 			body(payload.toJSONString()).
 		when().
-			post("/api/users").
+			post("/users").
 		then().
 			log().all().
 			statusCode(201).
 			body("$", hasKey("id")).
-			body("name", equalTo("Vinh Ly")).
-			body("job", equalTo("Automation Leader"));
+			body("name", equalTo("Will Smith")).
+			body("job", equalTo("Actor"));
 	}
 	
-	@Test
+	@Test(priority = 4)
 	public void testPutUser() {
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("name", "Boss");
-		map.put("job", "PM");
+		map.put("name", "Bin Lai");
+		map.put("job", "Tester");
 		JSONObject payload = new JSONObject(map);
 		
 		given().
@@ -79,40 +78,40 @@ public class ExampleRESTRequests {
 			accept(ContentType.JSON).
 			body(payload.toJSONString()).
 		when().
-			put("/api/users/2").
+			put("/users/2").
 		then().
 			log().all().
 			statusCode(200).
-			body("$", hasKey("updatedAt")).
-			body("name", equalTo("Boss")).
-			body("job", equalTo("PM"));
+			body("id", equalTo(2)).
+			body("name", equalTo("Bin Lai")).
+			body("job", equalTo("Tester"));
 		}
 	
-	@Test
+	@Test(priority = 5)
 	public void testPatchUser() {
 		JSONObject payload = new JSONObject();
-		payload.put("name", "Tom");
+		payload.put("job", "QA");
 		
 		given().
 			contentType(ContentType.JSON).
 			accept(ContentType.JSON).
 			body(payload.toJSONString()).
 		when().
-			patch("/api/users/3").
+			patch("/users/3").
 		then().
 			log().all().
 			statusCode(200).
-			body("$", hasKey("updatedAt")).
-			body("name", equalTo("Tom"));
+			body("id", equalTo(3)).
+			body("job", equalTo("QA"));
 		}
 	
-	@Test
+	@Test(priority = 6)
 	public void testDeleteUser() {	
 		given().
 		when().
-			delete("/api/users/4").
+			delete("/users/4").
 		then().
 			log().all().
-			statusCode(204);
+			statusCode(200);
 	}
 }

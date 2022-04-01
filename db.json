@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Vinh Ly",
+      "job": "Automation Tester"
+    },
+    {
+      "name": "Ta Vo",
+      "job": "Developer",
+      "id": 2
+    },
+    {
+      "name": "Tram Nguyen",
+      "job": "QA",
+      "id": 3
+    },
+	{
+      "name": "Quy Doan",
+      "job": "Sale",
+      "id": 4
+    }
+  ]
+}
