@@ -31,10 +31,10 @@ public class ExampleRESTRequests {
 			log().all().
 			statusCode(200).
 			assertThat().body(matchesJsonSchemaInClasspath("all_users_schema.json"));
-		}
+	}
 	
 	@Test(priority = 2)
-	public void test2GetUser() {
+	public void testGetUser() {
 		given().
 		when().
 			get("/users/1").
@@ -43,7 +43,7 @@ public class ExampleRESTRequests {
 			statusCode(200).
 			assertThat().body(matchesJsonSchemaInClasspath("user_schema.json")).
 			body("id", equalTo(1));
-		}
+	}
 	
 	@Test(priority = 3)
 	public void testPostUser() {
@@ -85,7 +85,7 @@ public class ExampleRESTRequests {
 			body("id", equalTo(2)).
 			body("name", equalTo("Bin Lai")).
 			body("job", equalTo("Tester"));
-		}
+	}
 	
 	@Test(priority = 5)
 	public void testPatchUser() {
@@ -103,7 +103,7 @@ public class ExampleRESTRequests {
 			statusCode(200).
 			body("id", equalTo(3)).
 			body("job", equalTo("QA"));
-		}
+	}
 	
 	@Test(priority = 6)
 	public void testDeleteUser() {	
